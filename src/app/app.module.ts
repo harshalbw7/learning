@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { OrdersComponent } from './orders/orders.component';
 import { PopupComponent } from './popup/popup.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PopupComponent } from './popup/popup.component';
     HomeComponent,
     HeaderComponent,
     OrdersComponent,
-    PopupComponent
+    PopupComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
