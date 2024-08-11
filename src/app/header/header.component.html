@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Techcraft</a>
+            <ul id="nav-mobile" class="right hide-on-small-and-down list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a routerLink="/orders">Orders</a></li>
+                <li class="active"><a class='dropdown-trigger' data-target='dropdown1'>{{student.name}}</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">Profile</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+</body>
+
+</html>

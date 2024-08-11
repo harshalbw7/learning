@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="bill">
+        <h4>Customer Orders : </h4>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Order No.</th>
+                    <th>Customer Name</th>
+                    <th>Order Amount</th>
+                    <th>Order Date</th>
+                    <th>Details</th>
+                </tr>
+                <tbody *ngFor="let order of orders">
+                    <tr>
+                        <td>{{order.orderId}}</td>
+                        <td>Harshal Wandhare</td>
+                        <td>{{ order.orderAmount| currency:"INR"}}</td>
+                        <td>{{order.orderDate}}</td>
+                        <td><a (click)="showPopup()">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <app-popup [isActive]="isVisible" (close)="closePopup()"></app-popup>
+        <button (click)="generatePDF()">Download</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body> 
+    <div class="container">
+        <h4>Food Items </h4>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let food of foods">
+                        <td>{{ food.foodId }}</td>
+                        <td>{{ food.foodName }}</td>
+                        <td>{{ food.foodPrice }}</td>
+                        <td>
+                            <label>
+                                <input type="checkbox" [disabled]="check.checked" #check
+                                    (click)="addStudent(food, check.checked)">
+                                <span></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn amber right" (click)="addToList()">Add To List</button>
+    </div>
+
+    <div class="container">
+        <div class="search">
+            <input class="input" type="text" [(ngModel)]="selectedStudent" (input)="filter()"
+                placeholder="Search by name" />
+            <button class="btn amber">Search</button>
+        </div>
+        <div class="filter" *ngIf="selectedStudent != '' ">
+            <div *ngFor="let student of filteredStudent">
+                <span class="select" (click)="selected(student.name)">{{student.name}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Cart</h4>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Cusomer</th>
+                        <th>Food</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of carts">
+                        <td>{{ cart.cartId }}</td>
+                        <td>{{ cart.customerId }}</td>
+                        <td>{{ cart.foodId }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

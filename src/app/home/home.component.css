@@ -1,0 +1,13 @@
+.search {
+    display: flex;
+    margin: 30px 30%;
+    margin-bottom: 0px;
+}
+
+.filter {
+    margin: 0px 30%;
+}
+
+.select {
+    cursor: pointer;
+}
